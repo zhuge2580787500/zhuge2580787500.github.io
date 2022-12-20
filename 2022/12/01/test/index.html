@@ -50,10 +50,6 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-<!--动态线条背景-->
-<script type="text/javascript"
-color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-</script>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -81,7 +77,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 			</ul>
 		</nav>
 		<nav>
-    			总文章数 10
+    			总文章数 11
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -211,7 +207,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 <div id="decryptionError" style="display: none;">Incorrect Password!</div>
 <div id="noContentError" style="display: none;">No content to display!</div>
 <div id="encrypt-blog" style="display:none">
-U2FsdGVkX19UFeu7TJGV0SBm12d26QcNrypAvZXEIiaBxCHUDslsDlqLmgzVSdYvhKaGtToEs2iuKCdJxLfkaRRcCJO4nseYKvXM5IaV2wA5qpR2oFtoEVfELWcNA5blxKlpZlKQVy2v9Fk5549tu1YJaxK18zl3EAqJUs73pyA/S1Qq94Zfu6UtQJ9iM/xYERfGFtPWLaN3o7HL1Cs0BDt0+fGTQnrbpF+EF5aFamQTQ3VmcwfJZdjtbICp2oXy5tBenzQ56Pl2ADCJpO5WeerXEncAUyPJ4XrKMQn3+WuWrtQCgnQYt5CpzAdFVHeXz0ifY9Jq/tRTBXZRmPMlLSzit7HQJPlfIcJWMViTBldKv5LXqodz8G5a49OFEB+6Gl2MsKFk3pcHH3prmaDvAfYsS+6mgQFlJcZ5Z8/9SLSrHlETT6Q5142XFUNUL1j8DRxykH/MC1X05jmH1awGJtXZM1T89WTopIL2h22UFR+NXl6LYeg3Z6KXm7zTcW9MyuRvJ7qPHniuKdrjGq/tSBUCOBsMBA8KzlGFOcGBD0k2Y8lrt7L48DRQ5bmQB/UpaOZX4XPZnGzr0iYnjZDXdIVNwf9qfuoWQr9MTjd808H6rfrNQhX9WCO94bNvP/KycNfi6YshX8VnSWmHK1g5k4ZS0jr4BNW6+ZOVxyFHsaKIiTJZCkyPBuXkfik1g5zllSpzjO8K/iQVudmcC1/yMf10CfinhTokyNYWBmxpDbXcgC01IkIELe1C8dCXxqRNPs7BCR+33Y9OkL1TlkuE8YdDUDQ/yEx2ODBa+Sl75wlaSnOE5TQqAcNboX898C5sM6lINiQZ8BaglEStM5qPF0WNC92y8Icj7U1ZKBpY+brHTQv0l2r7xkzR/dgXg8pnYrvr1jng+cZDBtuOJ+S52nzIO/TZyxvkApUFAkoJcd/l3sqH3J4/C+pIPvhd4j2RopgwsJ8BvD0qWoI/kuQbxQ==
+U2FsdGVkX19OrcWSpAaQ5djL/Y3uFF5nCEoyyUU9li1IJ0cL0TdBGTGQeSV4m40mK0jNHNO25x/NZjM8ZbDo8c6mIOCGWkiaxcu+2GkOlmb1DqixJOjttM9UaHGuNhJEXsWaVfVPiQ/1kODYazMyR4hPgOP9eZBO9YhcWkEC9rdMukSr3hYuTI1TYiXVYT0KWdTocqVAps0GrIcPwA6AoF0IY0lmBf8q61MKW4IqMFV2cDcldb0RyfdDrfqMhsqddFfijgcwvk4oamN1/IW2BcVoojFNpUvBJHDeRLl2/exlscwm4bD6FZZl8T+Ytx46+leQ3EAAvsJbEB5P5vhgN3Sizsnkr8tyuSr62xoFpJVdVmZnJtUHP0PsipRarMV8EY7AuUZ6pr5zG5chp0jfc+BcggE5EqOhWZU9UWMaUCwM7ms1AqhrQliPR/zSDuJmC+H8wXoDggvXHlhOihfNyZuxbUbJrjqF3EBI3bu1wJcwXOhJDNNrHZvGQqcP0I2JyvSl8AxZcTLmIEyvKjd4QNIrb3Q0s4cl1e4kFS+yUMmTk7egwX8nPHVIIjagdVTNlwsCnXSUT6HOhFfA5quMIdfUNtzYOrUT1lKjcl2Z8GjLz+QIViRFAIzdQFeW6zhFKa1U8HBArYSlV83t4K61cxhne/goEzByXYQDNp6vlCGfw9GanEng/fgGeegSabwvVnKeOsF6FR0WTD9Qx5ut/b5XA7f+UwretrGv+YbXLzO33S2XU8uvY7Y5jygBVWRQlQkxGkEFwpXQeix22pNXHBA/K962nr1wolRPPoFWbRTi2DsfBMNodC4xwuXLD8LRQATE3AAqB8YobWsrctLt38np+JgA4Mv1zEDqHUd+rjdKB6F7uw25SBT+mEFi+vBhq++FXp3NxuGYHCuHURfPtcIwGaAEBeMg0U0Tv9pSvSEqJsbP//M3lRl3zqny9SmsbU4b24RCYkY3K6+23LdVhA==
 </div>
 <script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
@@ -458,11 +454,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
+                <a href="javascript:void(0)" class="js-tag color5">软件分享</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件分享</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
