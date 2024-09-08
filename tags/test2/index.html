@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>acwing 1230.K倍区间 | Hangter个人博客</title>
+  <title>Tag: test2 | Hangter个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="acwing 1230.K倍区间">
-<meta property="og:url" content="http://example.com/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/index.html">
+  <meta name="description" content="一个废物大学生">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hangter个人博客">
+<meta property="og:url" content="http://example.com/tags/test2/index.html">
 <meta property="og:site_name" content="Hangter个人博客">
+<meta property="og:description" content="一个废物大学生">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/61d297071c8df4539cc7c5462f935e68.png">
-<meta property="article:published_time" content="2022-12-01T06:25:32.000Z">
-<meta property="article:modified_time" content="2022-12-01T06:27:19.616Z">
 <meta property="article:author" content="Hangter">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/61d297071c8df4539cc7c5462f935e68.png">
   
     <link rel="alternative" href="/atom.xml" title="Hangter个人博客" type="application/atom+xml">
   
@@ -171,199 +169,64 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-acwing-1230-K倍区间" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      acwing 1230.K倍区间
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2024" class="archive-year">2024</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2024/09/08/test-pic/" class="archive-article-date">
+  	<time datetime="2024-09-08T02:15:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2024/09/08/test-pic/">test_pic</a>
     </h1>
   
 
-        
-        <a href="/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/" class="archive-article-date">
-  	<time datetime="2022-12-01T06:25:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/61d297071c8df4539cc7c5462f935e68.png" alt="截图"></p>
-<span id="more"></span>
-<br/>
-
-<br/>
-
-<p>分析：看见相邻连续若干个数的和自然 想到前缀和</p>
-<p>但是要是用前缀和暴力的话</p>
-<p>i ：1 to n</p>
-<pre><code>j： i to n
-</code></pre>
-<p>复杂度O（n*n）</p>
-<p>数据范围1e5肯定要爆</p>
-<br/>
-
-<p>继续分析：</p>
-<p>&#x3D;&#x3D;时间不够，考虑空间换时间&#x3D;&#x3D;</p>
-<p>我们循环每个i和j就是左右端点</p>
-<p>也就是</p>
-<p>(s[j]-s[i-1])%k&#x3D;&#x3D;0</p>
-<br/>
-
-<p>再化简一步：</p>
-<p>s[j]%k&#x3D;&#x3D;s[i-1]%k</p>
-<br/>
-
-<p>也就是求前缀和数组每个值关于其他值%k相等的情况</p>
-<p>这个可以用空间来换</p>
-<p>用c[i]来记录i&#x3D;&#x3D;s[j]%k在s数组中出现的次数</p>
-<p>那么关于每个s[i :1 to n]%k在s中出现的次数就是c[s[i]%k]</p>
-<br/>
-
-<p>我们统计的时候直接ans+&#x3D;c[s[i]%k]就行</p>
-<br/>
-
-<p>上代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">#define endl &#x27;\n&#x27;</span><br><span class="line">#define int long long</span><br><span class="line">using namespace std;</span><br><span class="line">using ULL=unsigned long long;</span><br><span class="line">//using LL=long long;</span><br><span class="line">using PII=pair&lt;int,int&gt;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">const int N=1e5+10;</span><br><span class="line"></span><br><span class="line">int n,t,m;</span><br><span class="line">int ar[N];</span><br><span class="line">int s[N],c[N];</span><br><span class="line"></span><br><span class="line">signed main()&#123;</span><br><span class="line">	ios::sync_with_stdio(false);</span><br><span class="line">	cin.tie(0);</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	for(int i=1;i&lt;=n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;ar[i];</span><br><span class="line">		s[i]=s[i-1]+ar[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	c[0]++;</span><br><span class="line">	</span><br><span class="line">	for(int i=1;i&lt;=n;++i)&#123;</span><br><span class="line">		t+=c[s[i]%m];</span><br><span class="line">		c[s[i]%m]++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cout&lt;&lt;t;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>有个点需要注意</p>
-<br/>
-
-<p>就是c[0]++;</p>
-<p>也就是初始化c[0]&#x3D;1;</p>
-<br/>
-
-<p>假设原来的序列ar中恰好存在s[i]%k&#x3D;&#x3D;0</p>
-<p>那么在后面的for循环中，第一次遇见s[i]时，t+&#x3D;0；明显不符合我们的推理</p>
-<p>所以给c[0]&#x3D;1;</p>
-<p>这样第一次遇见s[i]%k&#x3D;&#x3D;0时t+&#x3D;1；</p>
-<p>而且如果后面还有s[j]%k&#x3D;&#x3D;0时t+&#x3D;2了；（相当于是一次是从0开始到j的所有ar的和s，另一次是从i开始到j的和</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">test2</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/12/01/acwing-1230-K%E5%80%8D%E5%8C%BA%E9%97%B4/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2024/09/08/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -386,9 +249,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -473,7 +336,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test2</a>
               </li>
             
             <div class="clearfix"></div>
