@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>计算机组成原理 | Hangter个人博客</title>
+  <title>计算机组成原理2 | Hangter个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="附 名词解释 运算器：硬件系统的重要组成部分，具有简单的算术、逻辑运算及移位、计数功能 变补：一种运算，对x连同符号位一起求反，并在末位加一 变形补码：采用两个符号位表示的补码，可用于判断溢出 ALU：算术逻辑运算单元，一种以加法器为基础的多功能组合逻辑电路 对阶：在浮点运算中把两数小数点对齐的工作叫做对阶 AC：累加器 MAR：地址寄存器，用于存放将访问主存的地址 MDR：数据缓冲寄存器，用于和">
+  <meta name="description" content="流水线的分类 按照功能分： ⑴ 单功能流水线只完成一种功能的流水线。如乘法流水线。（单功能流水只能是静态的）⑵ 多功能流水线可完成两种以上功能的流水线。多功能流水线的控制复杂。例如，美国TI公司的ASC计算机有一个多功能流水线，该流 水线含8功能段（输入、求阶差、对阶移位、相加、规格化、 相乘、累加和输出），可完成定点加运算（输入、相加、输 出）、定点乘运算（输入、相乘、累加、输出）和浮点加运 算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理">
-<meta property="og:url" content="http://example.com/2024/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:title" content="计算机组成原理2">
+<meta property="og:url" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/index.html">
 <meta property="og:site_name" content="Hangter个人博客">
-<meta property="og:description" content="附 名词解释 运算器：硬件系统的重要组成部分，具有简单的算术、逻辑运算及移位、计数功能 变补：一种运算，对x连同符号位一起求反，并在末位加一 变形补码：采用两个符号位表示的补码，可用于判断溢出 ALU：算术逻辑运算单元，一种以加法器为基础的多功能组合逻辑电路 对阶：在浮点运算中把两数小数点对齐的工作叫做对阶 AC：累加器 MAR：地址寄存器，用于存放将访问主存的地址 MDR：数据缓冲寄存器，用于和">
+<meta property="og:description" content="流水线的分类 按照功能分： ⑴ 单功能流水线只完成一种功能的流水线。如乘法流水线。（单功能流水只能是静态的）⑵ 多功能流水线可完成两种以上功能的流水线。多功能流水线的控制复杂。例如，美国TI公司的ASC计算机有一个多功能流水线，该流 水线含8功能段（输入、求阶差、对阶移位、相加、规格化、 相乘、累加和输出），可完成定点加运算（输入、相加、输 出）、定点乘运算（输入、相乘、累加、输出）和浮点加运 算">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-08T02:45:47.000Z">
-<meta property="article:modified_time" content="2024-09-08T03:25:04.456Z">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/26ede3571508fa0aafe539f1c000b57d.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/b245b1f615c5c07fb0c6de391ea125a9.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/ed6ef6c75de02c6d7aa2cd5d64821a8f.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/26e66f37ad4ad82ee651bd93d7000cb3.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/8dc6d3c81b191031f8c81dec0ade5160.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/55520ce7ca2fe44fa07a678db62540ee.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/8ce67804390f9b1f574e44fd5eff5e7d.png">
+<meta property="og:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/b42e629e41d6baafcdd54ea0d8dd6f60.png">
+<meta property="article:published_time" content="2024-01-01T03:32:29.000Z">
+<meta property="article:modified_time" content="2024-09-08T03:34:15.011Z">
 <meta property="article:author" content="Hangter">
 <meta property="article:tag" content="考试复习">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/26ede3571508fa0aafe539f1c000b57d.png">
   
     <link rel="alternative" href="/atom.xml" title="Hangter个人博客" type="application/atom+xml">
   
@@ -171,546 +180,45 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机组成原理" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-计算机组成原理2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      计算机组成原理
+      计算机组成原理2
     </h1>
   
 
         
-        <a href="/2024/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="archive-article-date">
-  	<time datetime="2024-09-08T02:45:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-08</time>
+        <a href="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/" class="archive-article-date">
+  	<time datetime="2024-01-01T03:32:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="附-名词解释"><a href="#附-名词解释" class="headerlink" title="附 名词解释"></a>附 名词解释</h1><ol>
-<li>运算器：硬件系统的重要组成部分，具有简单的算术、逻辑运算及移位、计数功能</li>
-<li>变补：一种运算，对x连同符号位一起求反，并在末位加一</li>
-<li>变形补码：采用两个符号位表示的补码，可用于判断溢出</li>
-<li>ALU：算术逻辑运算单元，一种以加法器为基础的多功能组合逻辑电路</li>
-<li>对阶：在浮点运算中把两数小数点对齐的工作叫做对阶</li>
-<li>AC：累加器</li>
-<li>MAR：地址寄存器，用于存放将访问主存的地址</li>
-<li>MDR：数据缓冲寄存器，用于和主存进行数据交换</li>
-<li>存储器：计算机的存储部件，用于存放程序和数据</li>
-<li>RAM：随机存取存储器，任何单元的内容都可以按地址随机读取或写入，主要用于组成主存</li>
-<li>ROM：只读存储器，任何单元的内容只能随机地读出</li>
-<li>SAM：顺序存取存储器，所存信息的排列、寻址和读写才做均按顺序进行</li>
-<li>DAM：半顺序存储器，介于RAM和SAM之间的存储器</li>
-<li>存储体（存储阵列）：存储器的核心部分，存储二进制信息的主体</li>
-<li>带宽：也称存储器数据传输率，是存储器单位时间内存取的二进制信息的位数<span id="more"></span></li>
-<li>并行主存系统：在一个存取周期内可并行存取多字的存储系统，能提高存储器系统的吞吐率</li>
-<li>Cache：高速缓冲存储器，用于提高存储器平均访问速度的容量较小的存储器</li>
-<li>记录面：磁盘片表面，可以用于记录信息</li>
-<li>磁道：磁盘记录面上一系列的同心圆，可以用于记录信息，从外到内由0至n编址，n磁道不存储信息</li>
-<li>扇区：磁盘面沿垂直于磁道的方向划分的区域，可以用于记录信息</li>
-<li>扇段：磁盘中磁盘在扇区内的部分，每个扇段可存储等量的信息，<em><strong>默认为 512字节</strong></em></li>
-<li>指令：控制计算机执行某种操作的命令</li>
-<li>机器语言：计算机硬件实体直接表示控制信息的语言</li>
-<li>指令系统：一台计算机所能执行的全部指令的集合</li>
-<li>CISC：复杂指令系统的计算机，一种指令系统的设计风格，指令条数多而丰富</li>
-<li>RISC：精简指令系统的计算机，一种指令系统的设计风格，指令条数少而简单</li>
-<li>控制器：CPU的组成部分之一，是计算机的指挥和控制中心，把运算器、存储器等联系成一个整体</li>
-<li>PC：程序计数器（指令地址寄存器），提供将要执行指令的指令地址</li>
-<li>IR：指令寄存器，用于存放当前正在执行的指令</li>
-<li>ID：指令译码器，指令分析部件，对指令中的操作码进行译码分析</li>
-<li>PSR：程序状态寄存器，用于存放程序的工作状态和指令执行的结果特征，其内容被称为程序状态字（PSW）</li>
-<li>微操作：机器最简单的基本操作</li>
-<li>指令周期：从取指令、分析指令到执行完一条指令所需的全部时间</li>
-<li>机器周期：指令周期某一工作阶段所需时间，相对独立，可能包含多个时钟周期</li>
-<li>外频：CPU乃至整个计算机系统的基准频率，可由石英振荡器提供</li>
-<li>倍频：CPU工作频率和外频之间的系数</li>
-<li>主频：CPU工作频率</li>
-<li>微命令：直接作用于部件或控制门电路的控制命令，构成控制信号序列的最小单位</li>
-<li>微操作：由微命令控制实现的最基本的操作</li>
-<li>微指令：用来产生一组微命令，控制完成一组微操作的二进制编码字</li>
-<li>微程序：一系列微指令的有序集合</li>
-<li>微周期：从控存中读取一条微指令并执行相应的微操作所需的时间</li>
-<li>CM：控制存储器，存放微程序的控制器</li>
-<li>总线：计算机传输信息的通道，是连接各个功能的纽带</li>
-<li>总线宽度：一个总线所设置的通信线路的数目</li>
-<li>DMA：直接存储器访问方式，一种I&#x2F;O信息传递方式</li>
-</ol>
-<h1 id="第一章-概论"><a href="#第一章-概论" class="headerlink" title="第一章 概论"></a>第一章 概论</h1><ol>
-<li>一个完整的<strong>计算机系统</strong>由两大系统组成：<u>硬件系统和软件系统</u></li>
-<li>计算机的<strong>硬件系统</strong>主要包括五大部件：<u>输入设备、输出设备、运算器、存储器、控制器（CPU）</u></li>
-<li>计算机基本的<strong>软件系统</strong>包括两大类：<u>系统软件和应用软件</u></li>
-<li>冯·诺依曼具有如下基本要点：<blockquote>
-<p>计算机由五大部件组成</p>
-<p>采用二进制形式表示数据和指令</p>
-<p>采用存储程序方式（核心）</p>
-</blockquote>
-</li>
-<li>早期计算机结构以运算器为中心，现代计算机逐渐演变成以存储器为中心</li>
-<li>硬件、软件在逻辑功能上是等效的，软件灵活但运行速度慢，硬件程序固定但运行速度快</li>
-<li>为分清各基层及结构的界面，明确各自功能，构成合理高效计算机系统，计算机系统可划分为七级：<blockquote>
-<p><em>硬件操作时序</em></p>
-<p><em>微程序机器层</em></p>
-<p><em>传统机器语言层</em></p>
-<p>—–实机器与虚机器分界—–</p>
-<p><em>操作系统层</em></p>
-<p><em>汇编语言层</em></p>
-<p><em>高级语言层</em></p>
-<p><em>应用语言层</em></p>
-</blockquote>
-</li>
-<li>计算机的性能指标主要包括以下几个方面：<blockquote>
-<p>基本字长：参与运算的数的基本位数，决定寄存器、数据总线的位数</p>
-<p>主存容量：主存储器所能存储的最大信息量</p>
-<p><strong>运算速度：计算机每秒平均执行的指令条数</strong></p>
-<blockquote>
-<p>用户程序执行的时间 $\mathrm{T_{CPU}&#x3D;I_N（程序长度） *CPI * T_C（时钟周期宽度）}$</p>
-<p>执行指令所需的平均时钟周期数 $\mathrm{CPI &#x3D; \frac{执行整个程序所需的时钟总数}{程序中指令总数}}$</p>
-<p>每秒平均执行的指令条数 $\mathrm{MIPS&#x3D;\frac{I_N}{T_CPU *10^6}}$</p>
-</blockquote>
-<p><em>所配置的外部设备及其性能指标</em></p>
-<p><em>所配置的系统软件</em></p>
-<p><em>可靠性、可用性、可维护性、安全性、兼容性</em></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="第二章-计算机中数据信息的表示"><a href="#第二章-计算机中数据信息的表示" class="headerlink" title="第二章 计算机中数据信息的表示"></a>第二章 计算机中数据信息的表示</h1><ol>
-<li>机器数是数在计算机中的二进制表示形式，其表示方式及特点有如下几种：<blockquote>
-<p>原码：表示直观、与真值转换容易，但加减运算复杂，0的两种形式给使用带来不便</p>
-<p>补码：参与运算容易，能简化运算过程，0只有一种表示方法</p>
-<p>反码：表示范围与源码相同，场作为数码变换的中间值</p>
-<p>移码：符号位与补码相反，主要用于表示浮点数的阶码，能方便进行比较运算</p>
-</blockquote>
-</li>
-<li>机器数的移位规则如下所示：<blockquote>
-<p>原码：符号位不变，数值部分左移、右移，空位补0</p>
-<p>补码：右移时符号位不变，高位补与符号位相同的代码，左移时连符号位一起左移，若符号位变动说明出错</p>
-</blockquote>
-</li>
-<li>不同位数的补码进行运算时需要进行符号位拓展，高位补与符号位相等的数</li>
-<li>鉴于移码的表示形式，可对移码定义扩展得到“移x码”，即 $\mathrm{[a]_{移x码}&#x3D;x+a}$</li>
-<li>浮点数由阶码和尾数两部分构成，前者表示小数点实际位置（以2为基数），后者表示数的有效数字</li>
-<li>规格化数要求尾数绝对值在1和0.5之间，对原码，其尾数首位为1，对补码，其位数首位与数符相反<blockquote>
-<p>在补码表示浮点数中，尾数为-0.5不是规格化数，尾数为-1是规格化数</p>
-<p>规格化数和非规格化数所能表示的<strong>浮点数范围</strong>不同</p>
-</blockquote>
-</li>
-<li>尾数的位数决定数据表示的精度，阶码的位数决定了数据表示的范围</li>
-<li>采用移码表示时，浮点数的机器零表示为全零</li>
-<li>IEEE754标准指定浮点数由三个部分组成：符号位，指数部分和尾数部分<blockquote>
-<p>单精度格式（32）：符号位（1），指数（8），尾数（23）</p>
-<p>双精度格式（64）：符号位（1），指数（11），尾数（52）</p>
-<p>指数部分采用移n码表示，尾数部分省略只表示小数，省略整数的1</p>
-</blockquote>
-</li>
-<li>浮点数较定点数范围更大，精度更高，但算法复杂，运算速度慢</li>
-<li>每个汉字、图形符号都用两个字节表示，每字节使用最低七位<blockquote>
-<p>区位码：每个常用汉字都有一个区号和位号，分别用两位十进制表示，两者用二进制拼接的形式为区位码</p>
-<p>国标码：将区位码的区号和位号均加上32后得到国标码</p>
-<p>机内码：用于汉字信息的存储，将国标码加8080H后得到</p>
-</blockquote>
-</li>
-<li>字节排列顺序分大端排序和小端排序，前者将最高有效字节放在低地址单元，后者放在高地址单元</li>
-<li>把一组编码中任何两个编码之间代码不同的位数称为两个编码的距离，也称为海明距离，一组编码中任何两个编码之间的最小距离称作编码的码距，码距同检、纠错关系如下：<blockquote>
-<p>要检查e位错，码距需要e+1</p>
-<p>要纠正t位错，码距需要2t+1</p>
-<p>要检e个错并纠正t个错（e&gt;t)，码距需要e+t+1</p>
-</blockquote>
-</li>
-<li>奇校验位使校验码中1的个数为奇数，偶校验位相反</li>
-<li>对海明校验码，其校验位数k对应信息位数n的检1纠1校验码存在关系 $\mathrm{2^k\ge n+k+1}$</li>
-<li>海明校验码的编码规则如下：<blockquote>
-<p>决定校验位数量，同原编码一同一字排开，取其中恰好位于2^k位的位数作为海明校验码，数据位由其所在的位置赋予位号，按其位号二进制中1的位置决定其被哪些校验位校验</p>
-<blockquote>
-<p>如位号为7的数据位被第1，2，3个校验码校验，位号为6的数据位被第2，3个校验码校验</p>
-</blockquote>
-<p>查错时，计算错误字（将校验位一同参与异或计算），错误字全为0，则无措，否则错误字指向的位产生错误</p>
-<blockquote>
-<p>拓展海明校验码增加一个校验位对整个校验码进行校验</p>
-<p>错误字全为0，则无错</p>
-<p>若错误字为1，且其它错误字不为1，则有一位出错，根据上述规则纠错</p>
-<p>错误字为0，其他错误字位不为1，则有两位出错，无法确定位置和纠错</p>
-<p>错误字为1，且其它错误字为0，新增校验位出错</p>
-</blockquote>
-</blockquote>
-</li>
-<li>循环冗余校验码的生成多项式应满足如下要求：<blockquote>
-<p>任何一位发生错误都应使榆树不为0</p>
-<p>不同位发生错误应当使余数不同</p>
-<p>对余数做模2除法，应能使余数循环</p>
-</blockquote>
-</li>
-<li>循环校验码具体计算方式详见计算机网络或TCP&#x2F;IP原理</li>
-<li><strong>struct的大小判断方式</strong></li>
-</ol>
-<h1 id="第三章-运算方法与运算器"><a href="#第三章-运算方法与运算器" class="headerlink" title="第三章 运算方法与运算器"></a>第三章 运算方法与运算器</h1><ol>
-<li>两数补码之和等于两数和的补码，两数补码之差等于两数差的补码，减法时对减数求变补后作加法运算</li>
-<li>对定点补码运算，当两加数符号相同且结果符号不同或进入符号位的进位同符号位产生的进位不相等时产生溢出</li>
-<li>采用变形补码进行加减运算可以通过结果的符号位判断是否产生溢出</li>
-<li>在<strong>原码一位乘法</strong>中，积的符号单独由两符号位异或得到，取乘数最低位为判别位，如判别位为1，则在部分机上加上被减数，而后连同乘数一起右移一位，直到<strong>运算n次</strong>为止，例子如下：<blockquote>
-<p>$$<br>设x&#x3D;[0.1101], y&#x3D;[-0.1011],根据原码一位乘法计算x\cross y\<br>解:\begin{array}{}<br>&amp;&amp;运算&amp;乘数&amp;操作解释\<br>\hline<br>&amp;&amp;z_f&#x3D;x_f\oplus y_f&#x3D;1&amp;&amp;对符号位进行异或\<br>\hline<br>&amp;&amp;0.0000&amp;1011\<br>&amp;+&amp;0.1101&amp;&amp;乘数末位为1，加\<br>\hline<br>&amp;&amp;0.1101\<br>&amp;\rightarrow&amp;0.0110&amp;1101&amp;同时右移\<br>&amp;+&amp;0.1101&amp;&amp;乘数末位为1，加\<br>\hline<br>&amp;&amp;1.0011\<br>&amp;\rightarrow&amp;0.1001&amp;1110&amp;同时右移\<br>&amp;\rightarrow&amp;0.0100&amp;1111&amp;末位为9，加0右移\<br>&amp;+&amp;0.1101\<br>\hline<br>&amp;&amp;1.0001&amp;&amp;末位为1，加\<br>&amp;\rightarrow&amp;0.1000&amp;1111&amp;同时右移\<br>\hline<br>\end{array}\<br>故运算结果为1.10001111<br>$$</p>
-</blockquote>
-</li>
-<li>在<strong>补码一位乘法</strong>中，参与运算的数以补码表示，部分积与被乘数采取双符号位。并于乘数末尾附加初值为0的附加位，以最后两位作为判别位，若为01则加上被乘数的补码，若为10则加上被乘数的变补，后部分积连同乘数同时右移，共<strong>做n+1次，最后一次不移位</strong>，具体示例如下：<blockquote>
-<p>$$<br>设x&#x3D;[-0.1101],y&#x3D;[-0.1011]，根据补码一位乘法计算x\cross y\<br>解:<br>\begin{array}{}<br>符&amp;运算&amp;乘数&amp;操作解释\<br>\hline<br>&amp;[x]_补&#x3D;1.0011\&amp;[-x]补&#x3D;0.1101\&amp;[y]_补&#x3D;1.0101\<br>\hline<br>&amp;00.0000&amp;1.01010&amp;于乘数末位添0\<br>+&amp;00.1101&amp;&amp;乘数末尾为01，加\<br>\hline<br>&amp;00.1101\<br>\rightarrow&amp;00.0110&amp;1.10101&amp;同时右移\<br>+&amp;11.0011&amp;&amp;乘数末位为10，减\<br>\hline<br>&amp;11.1001\<br>\rightarrow&amp;11.1100&amp;1.11010&amp;同时右移\<br>+&amp;00.1101&amp;&amp;乘数末尾为10，加\<br>\hline<br>&amp;00.1001\<br>\rightarrow&amp;00.0100&amp;1.11101&amp;同时右移\<br>+&amp;11.0011&amp;&amp;乘数末尾为01，加\<br>\hline<br>&amp;11.0111\<br>\rightarrow&amp;11.1011&amp;1.11110&amp;同时右移\<br>+&amp;00.1101&amp;&amp;乘数末尾为10，减\<br>\hline<br>&amp;00.1000\<br>\hline<br>\end{array}\<br>故运算结果为0.10001111<br>$$</p>
-</blockquote>
-</li>
-<li>在做定点小数补码乘法时，<strong>（-1）*（-1）是唯一的溢出情况</strong></li>
-<li>使用阵列乘法组件可以<strong>增快乘法运算速度</strong></li>
-<li>定点除法运算对参与运算定点数的<strong>绝对值</strong>有一定要求：对定点小数，要求被除数小于除数；对定点整数，要求被除数大于除数，否则会产生溢出</li>
-<li>使用<strong>原码恢复余数法</strong>计算原码定点小数除法，首先要判断被除数绝对值小于除数，而后计算符号位，令被除数减去除数，若所得余数为正，使上商为1，余数左移一位减去除数，否则令上商为0，余数加上除数，再左移一位减去除数，重复直到求得所要求的商的个位为止，余数符号与被除数相同，案例如下：<blockquote>
-<p>$$<br>已知x&#x3D;[-0.1011],y&#x3D;[0.1101],用原码恢复余数法求x&#x2F;y\<br>解:\begin{array}{}<br>符&amp;操作&amp;上商&amp;说明\<br>\hline<br>&amp;z_f&#x3D;z_x\oplus z_y&#x3D;1&amp;&amp;符号位单独计算\<br>&amp;[-|y|]_补&#x3D;11.0011\<br>\hline<br>&amp;00.1011&amp;0.0000\<br>+&amp;11.0011&amp;&amp;令被除数减去余数\<br>\hline<br>&amp;11.1110&amp;0.0000&amp;结果为负，上商不变\<br>+&amp;00.1101&amp;&amp;加上除数\<br>\hline<br>&amp;00.1011\<br>\leftarrow&amp;01.0110&amp;0.0000&amp;左移一位\<br>+&amp;11.0011&amp;&amp;减去除数\<br>\hline<br>&amp;00.1001&amp;0.0001&amp;结果为正，上商为1\<br>\leftarrow&amp;01.0010&amp;0.0010&amp;左移一位\<br>+&amp;11.0011&amp;&amp;减去除数\<br>\hline<br>&amp;00.0101&amp;0.0011&amp;结果为正，上商为1\<br>\leftarrow&amp;00.1010&amp;0.0110&amp;左移一位\<br>+&amp;11.0011&amp;&amp;减去除数\<br>\hline<br>&amp;11.1101&amp;0.0110&amp;结果为负，上商为0\<br>+&amp;00.1101&amp;&amp;加上除数\<br>\hline<br>&amp;00.1010\<br>\leftarrow&amp;01.0100&amp;0.1100&amp;左移一位\<br>+&amp;11.0011&amp;&amp;减去除数\<br>\hline<br>&amp;00.0111&amp;0.1101&amp;结果为正，上商置1\<br>\hline<br>\end{array}\<br>故运算结果为1.1101，余数的绝对值为0.0111\cross2^{-4} &#x3D; -0.00000111<br>$$</p>
-</blockquote>
-</li>
-<li>在<strong>原码不恢复余数法（加减交替法）</strong>中，当余数大于0时，左移一位减除数，否则左移一位加除数，若最后一次运算结果为负，则再做一次加除数的操作</li>
-<li>在定点整数除法中，拓展被除数高位至两倍长，空位补0，将低位置于原上商处，后继续运算</li>
-<li>在<strong>补码不恢复余数法（补码加减交替法）</strong>中，若被除数与除数同号，则被除数减去除数，否则令被除数加上余数，而后，若余数与除数同号，令上商为1，余数左移减去除数，否则令上商为0，余数左移一位加上除数，<strong>重复n次（末位恒置1）或n+1次（校正法，若余数及中间不为0且最终余数小于0，加上除数）</strong>，若校正法使用，则余数需要减去或加上除数进行恢复<blockquote>
-<p>$$<br>已知x&#x3D;[-0.1011],y&#x3D;[-0.1101],用补码不恢复余数法求x&#x2F;y\<br>解:\begin{array}{}<br>符&amp;操作&amp;上商&amp;说明\<br>\hline<br>&amp;[y]_补&#x3D;11.0011\&amp;[-y]_补&#x3D;00.1101\&amp;[x]_补&#x3D;11.0101\<br>\hline<br>&amp;11.0101&amp;0.0000\<br>+&amp;00.1101&amp;&amp;被除数和除数同号，相减\<br>\hline<br>&amp;00.0010&amp;0.0000&amp;结果异号，令上商为0\<br>\leftarrow&amp;00.0100&amp;0.0000&amp;左移一位\<br>+&amp;11.0011&amp;&amp;加上除数\<br>\hline<br>&amp;11.0111&amp;0.0001&amp;结果同号，令上商为1\<br>\leftarrow&amp;10.1110&amp;0.0010&amp;左移一位\<br>+&amp;00.1101&amp;&amp;减去除数\<br>\hline<br>&amp;11.1011&amp;0.0011&amp;结果同号，令上商为1\<br>\leftarrow&amp;11.0110&amp;0.0110&amp;左移一位\<br>+&amp;00.1101&amp;&amp;减去除数\<br>\hline<br>&amp;00.0011&amp;0.0110&amp;结果异号，令上商为0\<br>\leftarrow&amp;00.0110&amp;0.1100&amp;左移一位\<br>+&amp;11.0011&amp;&amp;加上除数\<br>\hline<br>&amp;11.1001&amp;0.1101&amp;结果同号，令上商为1\<br>\hline<br>\end{array}\<br>故结果为0.1101，余数为1.11111001<br>$$</p>
-</blockquote>
-</li>
-<li>在<strong>布斯除法</strong>中，令余数初始为被除数，若余数与除数同号，令上商为1，将余数左移一位后减去除数，否则令上商为0，将余数左移一位后加上除数，重复上述步骤得到所需位数后将商符变反（此后可以校正）<blockquote>
-<p>$$<br>已知x&#x3D;[-0.1011],y&#x3D;[-0.1101],用布斯除法求x&#x2F;y\<br>解:\begin{array}{}<br>符&amp;操作&amp;上商&amp;说明\<br>\hline<br>&amp;[y]_补&#x3D;11.0011\&amp;[-y]_补&#x3D;00.1101\&amp;[x]_补&#x3D;11.0101\<br>\hline<br>&amp;11.0101&amp;0.0001&amp;结果同号，令上商为1\<br>\leftarrow&amp;10.1010&amp;0.0010&amp;左移一位\<br>+&amp;00.1101&amp;&amp;减去除数\<br>\hline<br>\leftarrow&amp;10.1110&amp;0.0110&amp;结果同号，令上商为1并左移\<br>+&amp;00.1101&amp;&amp;减去除数\<br>\hline<br>\leftarrow&amp;11.0110&amp;0.1110&amp;结果同号，令上商为1并左移\<br>+&amp;00.1101&amp;&amp;减去除数\<br>\hline<br>&amp;00.0110&amp;1.1100&amp;结果异号，令上商为0并左移\<br>+&amp;11.0011&amp;&amp;加上除数\<br>\hline<br>&amp;11.1001&amp;1.1101&amp;结果同号，令上商为1\<br>&amp;&amp;0.1101&amp;令商符取反\<br>\hline<br>\end{array}\<br>故结果为0.1101，余数为1.11111001<br>$$</p>
-</blockquote>
-</li>
-<li>阵列除法器可大大<strong>加快除法运算速度</strong></li>
-<li>在浮点运算中，阶码和尾数的运算分别进行，分为<u>规格化运算和非规格化运算</u>两类，通常采用规格化运算</li>
-<li>在浮点加减运算中，需要进行<u>对阶、尾数求和、结果规格化和舍入</u>四个步骤</li>
-<li>对阶时，首先求出两数阶码之差，等差不等于零时，令小阶向大阶看齐，即把阶码小的数向右移位并使阶码加一</li>
-<li>破坏规格化指浮点运算后不再是规格化数，分为<u>向左破坏规格化和向右破坏规格化</u>，分别需要进行右规和左规</li>
-<li>舍入的规则通常有<u>恒舍法（截断法），0舍1入法、末尾恒置1法、查表舍入法和设保护位法</u></li>
-<li>浮点数的溢出通常指上溢，下溢直接视作机器零</li>
-<li>在浮点乘除运算中，尾数和阶码分别按照定点运算规则运算，并进行规格化处理</li>
-<li>移码加减规则为，将第二个加数或减数写为补码后进行加减，若采用双符号位，移码的第一个符号始终为0</li>
-<li>运算器结构的基本组成部分包括<u>ALU、寄存器、多路开关和数据总线等</u></li>
-<li>根据运算器各部件传递操作数的方式和总线数量的不同，可以分为<u>单总线结构、双总线结构和三总线结构</u></li>
-<li>最基本的运算器由<u>ALU，AC和MDR</u>组成</li>
-<li>移位操作分为：逻辑左移、逻辑右移（填0），算术左移，算术右移（左移数据不应改变，右移空位补符号位），循环左移，循环右移（分小循环[不带进位]和大循环，即进位状态寄存器中的内容不参与循环或参与循环）</li>
-</ol>
-<h1 id="第四章-存储器系统"><a href="#第四章-存储器系统" class="headerlink" title="第四章 存储器系统"></a>第四章 存储器系统</h1><ol>
-<li><p>存储器可以依据不同的准则进行分类：</p>
-<blockquote>
-<p>按与CPU的连接和功能分，存储器可以分为：<u>主存储器、辅助存储器（外存）、高速缓冲存储器</u></p>
-<p>按存取方式进行分类，存储器可以分为：<u>RAM、ROM、SAM、DAM</u></p>
-<p>按存储介质进行分类，存储器可以分为：<u>磁存储器、半导体存储器、光存储器</u></p>
-<p>按信息的可保存性，存储器可以分为：<u>易失性存储器、非易失性存储器</u></p>
-</blockquote>
-</li>
-<li><p>存储器基本有如下组件构成：**<u>地址寄存器、地址译码驱动电路、存储阵列（存储体）、读写电路、数据寄存器</u>**</p>
-</li>
-<li><p>多数计算机是按字节编制的，计算机还可以按字进行编址</p>
-</li>
-<li><p>数据传输控制方式可分为两类：<u>同步控制方式和异步控制方式</u></p>
-</li>
-<li><p>衡量半导体存储器的主要技术指标有：<u><strong>存储容量、速度、存储器总线带宽、价格</strong></u>、可靠性，其中速度可由<u><strong>访问时间和存取周期</strong></u>评价（存取周期大于访问时间）</p>
-</li>
-<li><p>存储器带宽$\mathrm{B_m}$可由以下式子计算而得：$\mathrm {B_m&#x3D;\frac{W}{T_M}}$，其中W表示存储器总线宽度，$\mathrm{T_M}$表示存取周期</p>
-</li>
-<li><p>存储器的价格常用每位的价格来衡量，总价格与存储容量成正比，与存储周期成反比</p>
-</li>
-<li><p>存储器系统的层次结构可表示如下，越往下访问时间越长、存储容量越大，存储每位的价格越小：</p>
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 寄存器</span><br><span class="line">op1=&gt;operation: 高速缓冲存储器</span><br><span class="line">op2=&gt;operation: 主存</span><br><span class="line">op3=&gt;operation: 硬盘</span><br><span class="line">ed=&gt;end: 光盘,磁带等</span><br><span class="line">st-&gt;op1-&gt;op2-&gt;op3-&gt;ed</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><p>通常使用的半导体存储器可分为<u>RAM和ROM</u>两类，而后又可进行额外的细分：</p>
-<blockquote>
-<p>SRAM：静态RAM，存储单位由一个触发器构成，断电后会丢失内容</p>
-<p>DRAM：动态RAM，采用MOS管和电容存储信息，需要刷新避免电容漏电</p>
-<p>NVRAM：非易失性RAM，使用由CMOS构成的SRAM单元并使用锂电池作为后备电源，在断电后还能保持</p>
-<p><em>掩膜ROM：由制造厂家直接将数据写入芯片，用户不可操作</em></p>
-<p>PROM：一次可编程ROM，由熔丝构成，用户可用电流熔断单元熔丝实现不可逆的数据写入</p>
-<p>EPROM：紫外线擦除PROM，用紫外线实现擦除的PROM，耗时较长</p>
-<p>EEPROM：电擦除的PROM，可用电有选择地擦除芯片中的内容</p>
-<p>闪速存储器（闪存）：一种存储密度高、成本低、读写速度快的高密度非易失性存储器</p>
-</blockquote>
-</li>
-<li><p>半导体存储器芯片一般有两种结构：<u>字片式结构和位片式结构</u></p>
-</li>
-<li><p>选中存储芯片的信号可用<u>单译码方案或双译码方案</u>实现，前者直接对全部地址译码，后者使用行列译码，简化译码器结构</p>
-</li>
-<li><p>动态存储器的具有刷新最大周期（泄露时间）$\mathrm{\triangle t &#x3D; C\frac{\triangle u}{I}}$，使用<strong>按行刷新</strong>，一次刷新需要一个存取周期，并可能有以下几种方式：</p>
-<blockquote>
-<p>集中式刷新，集中安排刷新操作的时间短，刷新时禁止CPU对存储器访问，这段时间被称为CPU的“死区”</p>
-<p>分散式刷新：定义存取周期是本身存取周期的两倍，前一个阶段用于正常访问，后一个阶段用于刷新，每次刷新一行</p>
-<p>异步式刷新：充分利用最大刷新间隔，每隔一段时间进行刷新，每次刷新一行，大大减少“死区”</p>
-<p>透明式刷新：利用CPU不访存的空闲时间进行刷新，在译码周期等时段内插入刷新操作</p>
-</blockquote>
-</li>
-<li><p>一个存储器由一定数量的存储器芯片构成，芯片总数&#x3D;$\frac{存储器总单元数\cross 位数}{每片芯片单元数\cross位数}$</p>
-</li>
-<li><p>当单元数满足存储器的要求，但位数不满足时，需要进行<strong>位拓展</strong></p>
-<p>当位数满足存储器的要求，但单元数不满足时，需要进行<strong>字拓展</strong></p>
-<blockquote>
-<p>位拓展将所有存储器芯片的地址线、片选信号线和读写控制线并接在一起，连接到地址和控制总线的对应位，后将数据线单独列出，分别接在数据总线对应位</p>
-<p>字拓展将所有芯片的地址线、数据线、读写控制线对应并接，连接到地址、数据、控制总线对应位，后用片选信号区分备选芯片</p>
-<p>字位同时拓展时，利用片选信号先进行字拓展，而后对每个假定的存储器进行位拓展</p>
-<p>附：地址线用$\mathrm{A}$表示，数据线用$\mathrm{D}$表示，读写信号用$\mathrm{R&#x2F;\overline{W}}$表示，片选信号用$\mathrm{\overline{CS}}$表示</p>
-</blockquote>
-</li>
-<li><p>计算机具有多种信息长度，则应当按存储周期的最大信息传输量为界进行存储</p>
-</li>
-<li><p>采用奇偶存储体（低位交叉编址），可以通过操作控制码，访问两种不同长度的数据</p>
-</li>
-<li><p>为解决存储器与CPU的速度匹配问题，通常采用以下方法：</p>
-<blockquote>
-<p>采用更高速的主存，或加长存储器的字长</p>
-<p>采用并行操作的双端口存储器</p>
-<p>采用并性存储器</p>
-<p>在CPU和主存中插入Cache</p>
-</blockquote>
-</li>
-<li><p>与单端口存储器相比，双端口存储器具有两个彼此独立的读写口，每个读写口具有独立的地址寄存器和译码电路，可以并行工作，设有BUSY标志防止对同一单元访存的读写冲突</p>
-</li>
-<li><p>并行主存系统通常有两种方式：<u>单体多字并行主存系统和多体交叉存取方式的并行储存系统</u></p>
-<blockquote>
-<p>单体多字并行主存系统使令多个并性存储器共用一套地址寄存器，按同一地址码并行访问各自单元</p>
-<p>多体交叉存取方式的并行主存系统使用多个容量相同的存储器，具有自己的地址寄存器、数据线、时序，可以独立编址同时工作，采取<strong>分时访问的时序</strong>（可以在一个存取周期内连续访问n个模块，但读出信息仍然用了一个存取周期）</p>
-</blockquote>
-</li>
-<li><p>相联存储器根据所存信息的全部特征或部分特征存取，是按内容寻址的寄存器</p>
-</li>
-<li><p>Cache利用了程序局部性原理，包括时间局部性和空间局部性</p>
-</li>
-<li><p>Cache按照块进行管理，将主存和Cache分割成大小相同的块，以块为单位调入Cache，总体由Cache存储阵列，地址映像变换机构和替换策略实现机构组成</p>
-</li>
-<li><p><strong>Cache的命中率$H&#x3D;\frac{访问Cache次数}{访问Cache次数+访问主存次数}$，主存系统的访存时间$T_a&#x3D;HT_c+(1-H)T_m$，加速比$S_p&#x3D;\frac{T_m}{T_a}$，访问效率$e&#x3D;\frac{T_c}{T_a}\cross100%$</strong></p>
-</li>
-<li><p>在Cache存储器中，CPU的访存地址被分割为两部分：<u>块地址和块内偏移量</u></p>
-</li>
-<li><p>Cache可进一步细分为两种：<u>数据Cache和标识Cache</u>，前者用于存放主存信息的副本，后者用于记录主存与Cache地址的对应关系</p>
-</li>
-<li><p>Cache的地址映像方式有三种：<u><strong>直接映像方式、全相联映像方式和组相联映像方式</strong></u></p>
-<blockquote>
-<p>直接映像方式使任意一个主存快只能复制到某一固定块中，Cache块号&#x3D;主存块号%Cache块数，主存地址分为区号、区内块号、块内偏移量三部分</p>
-<p>全相联映像方式使任何主存块可映像到任意一个Cache块，标识Cache存取主存块号到Cache块号的映射，主存地址分为主存块号和块内偏移量两部分</p>
-<p>组相联先将Cache分为若干组，每组Cache数量相同，只能映像到Cache的固定块，主存地址分为标识、组号和块内偏移量三部分，Cache地址分为组号，组内块号，块内偏移三部分，标识Cache存标识到组内块号的映射（设有有效位）</p>
-</blockquote>
-</li>
-<li><p>Cache的替换算法有：<u>FIFO法、LRU法（近期最少使用）</u>，写入策略有：<u>写直达法和写回法</u></p>
-</li>
-<li><p><em>虚拟存储器（虚拟层次）内从逻辑上对内存容量加以扩充，逻辑容量由内存容量和外存容量之和决定（将主存和辅存统一编址），速度接近于内存，可分为<u>页式、段式和段页式</u></em></p>
-</li>
-<li><p><em>磁表面存储器利用磁性材料在不同方向的磁场作用下形成的两种稳定的剩磁状态记录信息，一般采用磁头固定，磁层作匀速平移或高速旋转。由磁头缝隙对准运动的磁层进行读写操作，具有不同的磁记录方式</em>：</p>
-<blockquote>
-<p><em>归零制：每写完一位信息，电流归零，控制简单但记录密度低、抗干扰能力差</em></p>
-<p><em>不归零制：写完一位信息后，电流不归零，抗干扰能力好，见变才翻</em></p>
-<p><em>不归零-1制：见1才翻</em></p>
-<p><em>调相制：利用磁化翻转方向的相位差表示数据，抗干扰能力强，具有自同步能力</em></p>
-<p><em>调频制：记录1的电流翻转为0的两倍，记录密度高，具有自同步能力，但改变频繁花费时间较多</em></p>
-<p><em>改进调频制：仅在多个零交界处才改变电流，磁层翻转少，更快提高密度，具有自同步能力</em></p>
-</blockquote>
-</li>
-<li><p>磁记录方式的评价标准有：<u>自同步能力（从脉冲信号序列提取同步时钟信号的能力）、编码效率</u></p>
-</li>
-<li><p>磁盘存储器由<u>驱动器、控制器和盘片</u>三部分组成，<em>驱动器包含<u>旋转轴驱动部件，磁头定位部件、读写电路和数据传输电路等</u></em></p>
-</li>
-<li><p>磁盘地址可分为三部分：<u><strong>圆柱面号、盘面号、扇区号</strong></u></p>
-</li>
-<li><p>磁盘读写每次交换一个扇段的信息，若写入内容不足一个扇段，则余下部分重复数据的最后一位</p>
-</li>
-<li><p>磁盘容量的主要技术指标有：<u><strong>存储容量、平均存取时间、存储密度、数据传输率</strong>、误码率和价格</u></p>
-<blockquote>
-<p><strong>非格式化容量（可利用磁化单元总数）C&#x3D;盘面数量n*每盘面磁道数T*每磁道扇段数S*每扇段字节数B</strong></p>
-<p><em>格式化容量需要减去各种标志信息和地址信息，一般为非格式化容量的 60%~70%</em></p>
-<p><strong>平均存取时间（平均寻址时间）&#x3D;平均磁道定位时间+平均旋转等待时间+读写操作时间+控制延时时间</strong></p>
-<p><strong>上述公式中，旋转等待时间的均值为磁盘旋转半圈的时间，读写操作时间可由数据传输率计算，后两项有时忽略不计</strong></p>
-<p><strong>存储密度分：<u>位密度（最里圈沿磁道方向单位长度能存储的二进制位数）、道密度（沿磁盘径向单位长度包含的磁道数）、面密度（位密度和道密度的乘积）</u>三种</strong></p>
-<p><strong>数据传输率Dr&#x3D;磁盘旋转速度n（转&#x2F;秒）*每条磁道字节数N，或Dr&#x3D;位密度D*磁盘旋转线速度v</strong></p>
-</blockquote>
-</li>
-<li><p>光盘存储器利用光学方式读写信息，记录密度高，存储容量大，易于更换和保管，对环境条件要求低，但数据传输率低，可擦写性能不如磁盘</p>
-</li>
-</ol>
-<h1 id="第五章-指令系统"><a href="#第五章-指令系统" class="headerlink" title="第五章 指令系统"></a>第五章 指令系统</h1><ol>
-<li>指令系统的基本要求是具有：<u><strong>完备性、有效性、规整性（对称性、匀齐性、指令长与数据格式一致性）、兼容性</strong></u></li>
-<li>一条指令中应当包含如下信息：<u>操作码、操作数地址、存放操作结果的地址、下一条指令的地址</u>，其中下一条指令的地址大多采用隐含指定，总的来说可以看做**<u>操作码和地址码</u>**两部分</li>
-<li>视指令系统不同，指令字的长度可能是<u>定长指令字或可变长指令字</u></li>
-<li>CPU可直接访问的存储结构包括<u>主存储器、CPU寄存器、I&#x2F;O接口寄存器和堆栈</u></li>
-<li>二地址指令将原地址和目的地址操作数操作后存放结果到目的地址中，分为<u>S-S型、R-R型和S-R型</u></li>
-<li>指令操作码的编码方式有<u>定长编码和<strong>变长编码</strong></u>两种，一种常用的变长操作码编码方式是拓展操作码法：<blockquote>
-<p>设地址长度为$N$位，p地址指令的条数为 $ n_p$，则：</p>
-<p>$n_0&#x3D;((…((2^N-n_p)<em>2^N-n_{p-1})</em>…)*2^N-n_1)*2^N$</p>
-<blockquote>
-<p>指令字长为16位，地址字段长度为4位，有11条三地址指令，72条二地址指令，64条零地址指令，则</p>
-<p>$n_1 &#x3D; (((16-11)*16-72)*16)-64&#x2F;16&#x3D;124$</p>
-</blockquote>
-</blockquote>
-</li>
-<li><strong>指令的寻址方式</strong>分为<u>顺序方式和跳越方式</u></li>
-<li>为提高程序的设计质量，缩短指令长度，扩大操作数寻址空间，<strong>操作数的寻址方式</strong>应设计得多样化而灵活，故地址可分为形式地址（指令中给出的）和有效地址，故常用地址指令格式由<u><strong>操作码、寻址方式和形式地址</strong></u>三部分组成，有时寻址方式可以隐含指定：<blockquote>
-<p>立即寻址：指令的形式地址部分为操作码本身</p>
-<p>直接寻址：指令的形式地址就是操作数的有效地址</p>
-<p>间接寻址：指令的形式地址部分为操作数有效地址所在存储单元的地址，分一级间接寻址和多级间接寻址</p>
-<p>寄存器直接寻址（寄存器寻址）：指令的形式地址给出通用寄存器的编号，内容为指令所需的操作数</p>
-<p>寄存器间接寻址：指令的形式地址指定的寄存器中内容为操作数有效地址</p>
-<p><strong>变址寻址</strong>：指令给出变址寄存器编号和偏移量，有效地址为两者之和，有自增型变址寻址和自减型变址寻址</p>
-<p>相对寻址：指令的形式地址给出偏移量，有效地址为偏移量与PC内容相加</p>
-<p><strong>基址寻址</strong>：指令给出形式地址与基址寄存器（基地址），有效地址为两者之和</p>
-<blockquote>
-<p>基址寻址面向系统（有系统程序通过特权指令使用，一般不自增减），变址寻址面向用户（可自增、减）</p>
-</blockquote>
-</blockquote>
-</li>
-<li>堆栈有两种生成方式：<u>自底向上生成方式和自顶向下生成方式</u>，前者栈底为最高位</li>
-<li>MIPS指令集中，R型指令由op和funct共同隐含说明寻址方式，I型和J型指令由op段隐含说明指令使用寻址方式，有立即寻址、寄存器直接寻址、基址寻址、相对寻址和伪直接寻址（左移两位）等方式</li>
-<li>指令系统的设计风格有两种：<u><strong>CISC和RISC</strong></u></li>
-<li><em>一个完善的指令系统应包括的基本指令有：<u>数据传送指令、算术逻辑运算指令、移位操作指令、堆栈操作指令、字符串处理指令、程序控制指令和输入输出指令等</u></em></li>
-<li>转子指令和转移指令的区别在于：转子程序必须以某种方式保存返回地址，以便返回主程序</li>
-<li>CISC复杂庞大，指令格式多，子长不固定，使用多种寻址方式，可访存指令不受限制，指令执行时间和使用频率相差很大，大多采用**<u>微程序控制器</u>**</li>
-<li>RISC选取使用频率高的简单指令和不复杂的有用指令组成指令系统，指令数目、格式、寻址方式较少，使用流水线技术，并采用更多的通用寄存器，以R-R型方式工作，大多数指令可在一个时钟周期内完成，<strong>以组合逻辑控制为主</strong></li>
-<li>RISCV基于RISC，具有四种基本格式R、I、S、U型指令和两种立即数编码变形指令B、J型，其中R型采用寄存器寻址，I型采用立即寻址，Load和Store采用变址寻址，分值转移和无条件转移(B,J)指令使用相对寻址</li>
-</ol>
-<h1 id="第六章-控制系统与CPU"><a href="#第六章-控制系统与CPU" class="headerlink" title="第六章 控制系统与CPU"></a>第六章 控制系统与CPU</h1><ol>
-<li><p>计算机运行程序的基本过程有三部分：<u>取指令、分析指令、执行指令</u></p>
-</li>
-<li><p>控制器的基本功能包括：<u>控制指令的正确执行、控制程序和数据的输入及结果的输出、异常情况和特殊请求的处理</u></p>
-</li>
-<li><p>指令部件主要包括<u>PC、IR、ID和地址形成部件</u></p>
-</li>
-<li><p>宏观（程序控制）而言，计算机的解题过程为一条条指令的解题过程，微观（指令控制）而言，计算机的解题过程为一个个微操作执行的过程</p>
-</li>
-<li><p>在同步控制的及其中，一般包括<u>周期、节拍、脉冲</u>等三级时序信号</p>
-</li>
-<li><p><em>控制器的主要组成部件有：<u>指令部件、时序控制部件、微操作控制信号形成部件、中断机构、PSR、控制台</u></em></p>
-</li>
-<li><p>控制器的控制（组成）方式有三种：<u>组合逻辑型、存储逻辑型（微程序控制器）、组合逻辑与存储逻辑型（PLA）</u></p>
-</li>
-<li><p>指令的常用控制方式有三种：<u>同步控制、异步控制和联合控制</u>，设计时序系统主要针对同步控制，现代计算机大多采用联合控制</p>
-</li>
-<li><p>一般机器的机器周期有<u><strong>取指周期、取数周期、执行周期、中断周期</strong>等</u></p>
-</li>
-<li><p><em>把一个周期等分成若干节拍，每个节拍可以控制一个或几个微操作执行，其电位信号宽度取决于CPU完成一个基本操作的时间，在一个节拍内，有时还需要设置一个或几个工作脉冲，用于寄存器的复位和接受数据等</em></p>
-</li>
-<li><p>CPU包含运算器和控制器两个部分，其功能主要有：<u>程序控制、操作控制、时序控制、数据加工</u></p>
-</li>
-<li><p><em><strong>指令流程分析</strong>时，可以按照取指、取源、计算、取目的的思路进行解构</em></p>
-</li>
-<li><p>控制信号形成电路可用<u>组合逻辑电路实现或用PLA电路实现</u></p>
-</li>
-<li><p>微程序控制用程序设计的思想方法组织操作控制逻辑，以规整的存储逻辑代替繁杂的组合逻辑，将指令要执行的控制信号用二进制编码依次存入存储器。执行时读出并产生控制命令</p>
-</li>
-<li><p>微指令通常分为两大字段：<u>操作控制字段和地址控制字段</u></p>
-</li>
-<li><p>在微指令控制中，当机器指令在IR中被分析后，根据指令码通过微地址形成电路产生程序的起始微地址，并送入uMAR中，经译码、驱动后从被选的控存单元取出一条微指令送入uIR，经译码可直接产生一组微命令送往有关的功能部件，控制其完成所规定的微操作，此后，由uIR指令的地址控制字段及有关状态送往微地址形成电路，循环直到一条指令的微程序执行完毕</p>
-</li>
-<li><p>常用的微指令编译方法有三种：<u><strong>直接控制法、最短编码法（一条微指令对应一个微命令）、字段直接编码法</strong>、字段间接编码法</u></p>
-<blockquote>
-<p>字段直接编码法的每个子字段<strong>应留出一个状态</strong></p>
-</blockquote>
-</li>
-<li><p>微程序顺序控制需解决<u>初始微地址和后继微地址</u>的形成方法，前者可使用<u>一级功能转移、二级功能转移或PLA</u>实现，后者主要使用<u><strong>增量方式和断定方式</strong></u>产生</p>
-</li>
-<li><p>根据指令之间衔接关系，指令的执行可以分为<u>顺序、重叠、流水</u>三种方式</p>
-<blockquote>
-<p>一次重叠（仅能取指和执行重叠）执行n条指令所需时间为：</p>
-<p>$t_T&#x3D;t_1+nt_2+t_3+(n-1)max(t_1,t_3)$</p>
-<p>二次重叠（都可以叠）执行n条指令所需时间为：</p>
-<p>$t_T&#x3D;t_1+t_3+max(t_1,t_2)+max(t_2,t_3)+(n-2)max(t_1,t_2,t_3)$</p>
-</blockquote>
-</li>
-<li><p>按处理级别分类，流水线可分为<u>操作部件级、指令级、处理机间</u></p>
-<p>按功能分类，流水线可分为<u>单功能流水线和多功能流水线</u></p>
-<p>按工作方式分类，流水线可分为<u>静态流水线和动态流水线</u>其中后者必须是多功能流水线，</p>
-<p>按流水线结构分类，流水线可分为<u>线性流水线和非线性流水线</u></p>
-</li>
-<li><p>流水线的主要指标及计算方式如下：</p>
-<blockquote>
-<p>吞吐率（单位时间流水线能完成的指令数、任务数和输出结果的数量） $T_p&#x3D;\frac{n}{m\triangle t+(n-1)\triangle t}$</p>
-<p>加速比（采用流水线后的工作速度与等效的顺序串行方式的工作比） $S_p&#x3D;\frac{nm\triangle t}{m\triangle t+(n-1)\triangle t}$</p>
-<p>效率（流水线各功能段的利用率） $\eta&#x3D;\frac{nm\triangle t}{m(m+n-1)\triangle t}&#x3D;\frac{S_p}{m}&#x3D;T_p\triangle t$</p>
-</blockquote>
-</li>
-<li><p>若一段程序的相近指令之间存在某种依赖关系，称其具有相关关系（hazard），分<u>局部相关和全局相关</u></p>
-<blockquote>
-<p>资源相关（结构冒险）指多条指令进入流水线后，在同一机器周期争用同一功能部件的冲突，可通过<strong>插入气泡、增加缓冲部件</strong>解决</p>
-<p>数据相关（数据冒险）指多条指令操作重叠进行，使对操作数的访问顺序发生变化导致的冲突，可<strong>延迟进入或设置专用旁路解决</strong></p>
-<p>控制转移相关（控制冒险）指有分支指令、转子指令和中断引起的相关冲突，可通过加快提前<strong>形成条件码、预取转移成功指令、采用延迟转移技术（延后转移前有效指令）、动态分支预测等</strong></p>
-</blockquote>
-</li>
-</ol>
-<h1 id="第七章-总线技术"><a href="#第七章-总线技术" class="headerlink" title="第七章 总线技术"></a>第七章 总线技术</h1><ol>
-<li>按照不同的标准，总线可分为不同的种类：<blockquote>
-<p>按总线承担的任务：<u>内部总线、外部总线</u></p>
-<p>按总线所处的物理位置：<u>片内总线、功能模块内总线、功能模块间总线（系统总线）、外部总线</u></p>
-<p>按总线所传送的信息类型：<u>地址总线、数据总线、控制总线</u></p>
-<p>按总线一次传送数据的位数：<u>串行总线、并行总线</u></p>
-<p>按总线操作的定时方式：<u>同步总线、异步总线</u></p>
-</blockquote>
-</li>
-<li>总线的性能可由以下标准评判：<u>总线带宽、总线宽度、总线时钟频率、总线负载能力</u></li>
-<li>总线由两部分组成：<u>连接各个功能模块的信号线和管理总线的总线控制器</u></li>
-<li>总线控制器具有如下功能：<u>总线系统的资源分配和管理，提供总线定时信号脉冲，负责总线使用权的仲裁，负责实现不同总线协议的转换和不同总线之间数据的缓冲</u></li>
-<li>按照不同的标准，总线上的设备可分为不同的种类：<blockquote>
-<p>按逻辑功能分：<u>总线主设备，总线从设备</u></p>
-<p>按在信息交换中的地位分：<u>总线源设备，总线目的设备</u></p>
-<p><em>源设备不一定就是主设备，目的设备不一定就是从设备</em></p>
-</blockquote>
-</li>
-<li>信号线可分为两类：<u>专用信号线和复用信号线</u></li>
-<li>按照不同的标准，总线仲裁方法可分为不同的类别：<blockquote>
-<p>集中仲裁和分布仲裁</p>
-<p>并行仲裁和串行仲裁</p>
-<p>固定优先级仲裁和动态优先级仲裁</p>
-</blockquote>
-</li>
-<li>集中式总线方式可分为三种：<u>链式、计数器和独立</u></li>
-<li>总线定时的方法可分为<u>同步定时和异步定时</u></li>
-<li>数据总线宽度很大程度上决定了一个计算机总线的性能，地址总线的宽度决定着系统的寻址能力</li>
-<li>总线中的一次数据传输分为两个阶段：<u>地址、命令阶段和数据传输阶段</u></li>
-<li>数据块传输方式（连续数据传输方式、突发数据传输方式、成组数据传输方式）在发送一个地址信息后就开始连续的数据块传输</li>
-</ol>
-<h1 id="第九章-I-O系统组织"><a href="#第九章-I-O系统组织" class="headerlink" title="第九章 I&#x2F;O系统组织"></a>第九章 I&#x2F;O系统组织</h1><ol>
-<li><p><em>典型I&#x2F;O系统的组成包括：<u>系统总线、I&#x2F;O设备接口控制器、I&#x2F;O设备、相关控制软件</u></em></p>
-</li>
-<li><p>现代I&#x2F;O系统的组成包括：<u>拓展总线、I&#x2F;O设备接口控制器、I&#x2F;O设备、相关控制软件</u></p>
-</li>
-<li><p>主机与外设间的连接方式大致可分为：<u>总线方式、通道方式和I&#x2F;O处理机方式</u></p>
-</li>
-<li><p>I&#x2F;O信息传输的控制方式有两种：<u>由程序控制的数据传送和由专有硬件控制的数据传送</u>，前者可进一步分为<u>直接程序控制方式和程序中断控制方式</u>，后者可进一步分为<u>DMA方式、通道方式和I&#x2F;O处理机方式</u></p>
-</li>
-<li><p>I&#x2F;O端口的编址方式有两种：<u>统一编址和独立编址</u></p>
-</li>
-<li><p>按数据传送格式分，I&#x2F;O接口可分为<u>串行接口和并行接口</u></p>
-<p>按时序的控制方式分，I&#x2F;O接口可分为<u>同步接口和异步接口</u></p>
-<p>按信息传送交换的控制方式分，I&#x2F;O接口可分为<u>直接程序控制接口、程序中断接口、直接存储器存取接口</u></p>
-</li>
-<li><p>I&#x2F;O接口的基本组成包括：<u>设备选择电路、数据缓冲寄存器、命令寄存器、状态寄存器及其他有关部件</u></p>
-</li>
-<li><p>在程序控制方式下，内存和外设交换一个数据需要使用两次总线</p>
-</li>
-<li><p>中断具有随机性（不可预测性）、异步性和不可再现性</p>
-</li>
-<li><p>中断源可分为<u>硬件中断和软件中断</u>，也可分为<u>内部中断和外部中断</u></p>
-</li>
-<li><p>中断的过程大致包括以下步骤：<u>中断请求、中断判优及响应、保护现场、中断服务、恢复现场、中断返回</u></p>
-<blockquote>
-<p>中断响应大致包括以下步骤：关中断、设置屏蔽字、保存断点地址和程序状态字、开中断、转入中断服务程序入口</p>
-<p>结尾部分，需要先关中断，后恢复现场，清中断请求信号，清屏蔽字，开中断并恢复PSW、PC</p>
-</blockquote>
-</li>
-<li><p>按中断服务程序入口的获取方式分，中断可分为<u>向量中断和非向量中断</u></p>
-<p>按是否可屏蔽分，中断可分为<u>可屏蔽中断和不可屏蔽中断</u></p>
-</li>
-<li><p>若程序优先级高于或等于当前终端请求优先级，则不传送中断请求信号给CPU，进行中断屏蔽，否则等待指令结束后进行中断处理</p>
-</li>
-<li><p>程序中断对流水线有一定影响，可以通过不精确断点法、精确断点法进行处理</p>
-</li>
-<li><p>采用DMA可响应随机请求，进行快速数据传送，且仅需占用系统总线</p>
-</li>
-<li><p>DMAC由以下部件组成：主存地址寄存器MAR，传输量计数器WC，数据缓冲寄存器DBR，设备地址寄存器DAR，控制&#x2F;状态寄存器CSR，DMA指控逻辑，DMA中断控制逻辑，数据线、地址线和控制信号线</p>
-</li>
-<li><p>DMA控制方式下的数据传输过程包括以下几个步骤：</p>
-<blockquote>
-<p>进行DMA预处理：控制寄存器写入操作命令，后向DAR松摄设备后，向MAR送入主存起始地址，向WC送入交换数据的个数</p>
-<p>后DMA控制器由DMA接口提出占用总线的申请，获取总线的控制权，按规定方式进行数据交换</p>
-<p>进行DMA后处理：校验数据是否正确，决定是否继续传送，测试是否发生错误，判断是否正常结束</p>
-</blockquote>
-</li>
-<li><p>程序中断以CPU为中心，DMA以主存为中心</p>
-</li>
-</ol>
+        <p>流水线的分类</p>
+<p>按照功能分：</p>
+<p>⑴ 单功能流水线<br>只完成一种功能的流水线。如乘法流水线。（单功能流水只能是静态的）<br>⑵ 多功能流水线<br>可完成两种以上功能的流水线。多功能流水线的控制复杂。<br>例如，美国TI公司的ASC计算机有一个多功能流水线，该流 水线含8功能段（输入、求阶差、对阶移位、相加、规格化、 相乘、累加和输出），可完成定点加运算（输入、相加、输 出）、定点乘运算（输入、相乘、累加、输出）和浮点加运 算（输入、求阶差、对阶移位、相加、规格化和输出）。</p>
+<span id="more"></span>
+
+<p>按照工作方式分：</p>
+<p>⑴ 静态流水线<br>在同一时间内只能以一种方式工作的流水线。<em><strong>静态流水线可 以是单功能的，也可以是多功能的</strong></em>（必须在一种功能流水完 成后，排空流水线，再静态切换到另一种功能）。 但多功能 的频繁切换将严重影响流水线的处理效率。<br>⑵ 动态流水线<br>允许在同一时间内将不同的功能段组合成具有多种功能的流 水子集，以完成不同的功能的流水线。<em><strong>动态流水线必须是多功能流水线。</strong></em></p>
+<p>流水线的指标：</p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/26ede3571508fa0aafe539f1c000b57d.png" alt="截图"></p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/b245b1f615c5c07fb0c6de391ea125a9.png" alt="截图"></p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/ed6ef6c75de02c6d7aa2cd5d64821a8f.png" alt="截图"></p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/26e66f37ad4ad82ee651bd93d7000cb3.png" alt="截图"></p>
+<p>微指令的控制方式有：</p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/8dc6d3c81b191031f8c81dec0ade5160.png" alt="截图"></p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/55520ce7ca2fe44fa07a678db62540ee.png" alt="截图"></p>
+<br/>
+
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/8ce67804390f9b1f574e44fd5eff5e7d.png" alt="截图"></p>
+<p><img src="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/b42e629e41d6baafcdd54ea0d8dd6f60.png" alt="截图"></p>
 
       
 
@@ -780,7 +288,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%862/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -794,15 +302,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2024/09/08/a/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          a
-        
-      </div>
-    </a>
   
+    <a href="/2024/01/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机组成原理</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -827,7 +331,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84-%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text">附 名词解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%A6%82%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">第一章 概论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">第二章 计算机中数据信息的表示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E8%BF%90%E7%AE%97%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">第三章 运算方法与运算器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.</span> <span class="toc-text">第四章 存储器系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-number">6.</span> <span class="toc-text">第五章 指令系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E4%B8%8ECPU"><span class="toc-number">7.</span> <span class="toc-text">第六章 控制系统与CPU</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%80%BB%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="toc-number">8.</span> <span class="toc-text">第七章 总线技术</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-I-O%E7%B3%BB%E7%BB%9F%E7%BB%84%E7%BB%87"><span class="toc-number">9.</span> <span class="toc-text">第九章 I&#x2F;O系统组织</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
